@@ -14,14 +14,19 @@ public class ArraySorter {
         int max = numbers[0];
         int min = numbers[0];
 
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > max) {
-                max = numbers[i];
+        for (int number : numbers) {
+            if (number > max) {
+                max = number;
             }
-            if (numbers[i] < min) {
-                min = numbers[i];
+            if (number < min) {
+                min = number;
             }
+        }
 
+        System.out.println("Min value: " + min);
+        System.out.println("Max value: " + max);
+
+        for (int i = 0; i < numbers.length; i++) {
             int minIndex = i;
 
             for (int j = i + 1; j < numbers.length; j++) {
@@ -32,13 +37,8 @@ public class ArraySorter {
             int temp = numbers[minIndex];
             numbers[minIndex] = numbers[i];
             numbers[i] = temp;
-
-
         }
 
-        System.out.println("Min value: " + min);
-        System.out.println("Max value: " + max);
         System.out.println("Sorted array: " + Arrays.toString(numbers));
-
     }
 }
