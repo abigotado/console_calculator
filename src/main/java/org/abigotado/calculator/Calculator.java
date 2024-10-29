@@ -1,4 +1,4 @@
-package org.abigotado;
+package org.abigotado.calculator;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -102,8 +102,7 @@ public class Calculator {
     }
 
     private static void throwStopOrResetException(String input) {
-        if (input.length() != 1)
-            return;
+        if (input.length() != 1) return;
         if (Character.toLowerCase(input.charAt(0)) == 'c') {
             throw new RuntimeException("c");
         }
